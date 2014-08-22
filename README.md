@@ -1,3 +1,9 @@
+So this still needs some refactoring, and I haven't put in test cases for enough combinations of coins - it was
+a simple enough problem that the base cases went green with minimal code.  I'm not giving it as much attention as
+I would production code because I anticipate going into more detail face-to-face.  I'm happy to do more - just pressed
+for time today and I didn't want to hold up the process.
+
+
 Vending Machine Kata
 ====================
 
@@ -12,10 +18,10 @@ Features
 
 Accept Coins
 ------------
-  
-_As a vendor_  
-_I want a vending machine that accepts coins_  
-_So that I can collect money from the customer_  
+
+_As a vendor_
+_I want a vending machine that accepts coins_
+_So that I can collect money from the customer_
 
 The vending machine will accept valid coins (nickels, dimes, and quarters) and reject invalid one (pennies).  When a
 valid coin is inserted the amount of the coin will be added to the current amount and the display will be updated.
@@ -29,9 +35,9 @@ NOTE: The temptation here will be to create Coin objects that know their value. 
 Select Product
 --------------
 
-_As a vendor_  
-_I want customers to select products_  
-_So that I can give them an incentive to put money in the machine_  
+_As a vendor_
+_I want customers to select products_
+_So that I can give them an incentive to put money in the machine_
 
 There are three products: cola for $1.00, chips for $0.50, and candy for $0.65.  When the respective button is pressed
 and enough money has been inserted, the product is dispensed and the machine displays THANK YOU.  If the display is
@@ -42,9 +48,9 @@ either INSERT COINS or the current amount as appropriate.
 Make Change
 -----------
 
-_As a vendor_  
-_I want customers to receive correct change_  
-_So that they will use the vending machine again_  
+_As a vendor_
+_I want customers to receive correct change_
+_So that they will use the vending machine again_
 
 When a product is selected that costs less than the amount of money in the machine, then the remaining amount is placed
 in the coin return.
@@ -52,9 +58,9 @@ in the coin return.
 Return Coins
 ------------
 
-_As a customer_  
-_I want to have my money returned_  
-_So that I can change my mind about buying stuff from the vending machine_  
+_As a customer_
+_I want to have my money returned_
+_So that I can change my mind about buying stuff from the vending machine_
 
 When the return coins is selected, the money the customer has placed in the machine is returned and the display shows
 INSERT COIN.
@@ -62,9 +68,9 @@ INSERT COIN.
 Sold Out
 --------
 
-_As a customer_  
-_I want to be told when the item I have selected is not available_  
-_So that I can select another item_  
+_As a customer_
+_I want to be told when the item I have selected is not available_
+_So that I can select another item_
 
 When the item selected by the customer is out of stock, the machine displays SOLD OUT.  If the display is checked again,
 it will display the amount of money remaining in the machine or INSERT COIN if there is no money in the machine.
@@ -72,9 +78,9 @@ it will display the amount of money remaining in the machine or INSERT COIN if t
 Exact Change Only
 -----------------
 
-_As a customer_  
-_I want to be told when exact change is required_  
-_So that I can determine if I can buy something with the money I have before inserting it_  
+_As a customer_
+_I want to be told when exact change is required_
+_So that I can determine if I can buy something with the money I have before inserting it_
 
 When the machine is not able to make change with the money in the machine for any of the items that it sells, it will
 display EXACT CHANGE ONLY instead of INSERT COINS.
