@@ -2,12 +2,13 @@ package com.pillartechnology.vending;
 
 public class VendingMachine {
 
+	private static final String PRICE = "PRICE";
 	private String display;
 	private CoinAcceptor acceptor;
 	private int moneyIn = 0;
 
 	public VendingMachine() {
-		display = new String();
+		display = "INSERT COINS";
 		acceptor = new CoinAcceptor();
 	}
 
@@ -26,7 +27,15 @@ public class VendingMachine {
 	}
 
 	public String getDisplay() {
-		return display;
+		String returnValue = display;
+		if (display.contains(PRICE)) {
+			display = "Total inserted: " + Integer.toString(moneyIn);
+		}
+		return returnValue;
+	}
+
+	public void selectProduct(Product product) {
+		display = PRICE + " " + product.price;
 	}
 
 }
