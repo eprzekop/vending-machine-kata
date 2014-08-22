@@ -56,4 +56,16 @@ public class VendingMachineTest {
 		assertThat(machine.getDisplay(), containsString("THANK YOU"));
 	}
 
+	@Test
+	public void resetsMessageAfterSuccessfulProductDelivery() throws Exception {
+		machine.insertMoney(Coin.QUARTER);
+		machine.insertMoney(Coin.QUARTER);
+		machine.insertMoney(Coin.QUARTER);
+		machine.insertMoney(Coin.QUARTER);
+		machine.selectProduct(Product.COLA);
+		machine.getDisplay();
+		assertThat(machine.getDisplay(), containsString("INSERT COINS"));
+
+	}
+
 }
