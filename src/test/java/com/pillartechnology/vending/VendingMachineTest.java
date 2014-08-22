@@ -44,4 +44,16 @@ public class VendingMachineTest {
 		assertThat(machine.getDisplay(), containsString("10"));
 	}
 
+	@Test
+	public void promptsWithThankYouWhenSufficientMoneyIn() throws Exception {
+		machine.insertMoney(Coin.QUARTER);
+		machine.insertMoney(Coin.QUARTER);
+		machine.insertMoney(Coin.QUARTER);
+		machine.insertMoney(Coin.DIME);
+		machine.insertMoney(Coin.DIME);
+		machine.insertMoney(Coin.NICKEL);
+		machine.selectProduct(Product.COLA);
+		assertThat(machine.getDisplay(), containsString("THANK YOU"));
+	}
+
 }

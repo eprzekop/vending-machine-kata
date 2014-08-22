@@ -19,7 +19,6 @@ public class VendingMachine {
 		} else {
 			rejectCoin(coin);
 		}
-
 	}
 
 	private void rejectCoin(Coin coin) {
@@ -35,7 +34,28 @@ public class VendingMachine {
 	}
 
 	public void selectProduct(Product product) {
-		display = PRICE + " " + product.price;
+		if (enoughMoney(product.price)) {
+			display = "THANK YOU";
+			giveProduct(product);
+			returnChange(product.price);
+		} else {
+			display = PRICE + " " + product.price;
+		}
+	}
+
+	private void giveProduct(Product product) {
+		// Hardware interaction to give the product
+	}
+
+	private void returnChange(int productPrice) {
+		// Hardware interaction to return moneyIn-product.price
+	}
+
+	private boolean enoughMoney(int productPrice) {
+		if ((moneyIn - productPrice) >= 0) {
+			return true;
+		}
+		return false;
 	}
 
 }
